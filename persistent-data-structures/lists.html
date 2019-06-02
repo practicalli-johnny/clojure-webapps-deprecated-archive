@@ -2217,8 +2217,8 @@
 (list )    ;; creates an empty list
 (list 1 2 &quot;three&quot; [4] five &apos;(6 7 8 9))
 (list -1 -0.234 0 1.3 8/5 3.1415926)
-(list &quot;cat&quot; &quot;dog&quot; &quot;rabit&quot; &quot;fish&quot; 12 22/7)
-(list :cat :dog :rabit :fish)
+(list &quot;cat&quot; &quot;dog&quot; &quot;rabbit&quot; &quot;fish&quot; 12 22/7)
+(list :cat :dog :rabbit :fish)
 </code></pre><p>You can mix types because Clojure is dynamic and it will work it out later, you can even have functions as elements, because a function always returns a value.  In the following example we define a list that includes a function call to the <code>str</code> function that joins its parameters into a single string.</p>
 <pre><code>(list :cat 1 &quot;fish&quot; 22/7 (str &quot;fish&quot; &quot;n&quot; &quot;chips&quot;))
 </code></pre><h2 id="lists-evaluate-as-function-calls">Lists evaluate as function calls</h2>
@@ -2236,8 +2236,8 @@
 &apos;(1 2 3 4)
 </code></pre><p>So using the quote character we can define lists very easily and concisely.</p>
 <pre><code class="lang-&apos;">&apos;(-1 -0.234 0 1.3 8/5 3.1415926)
-&apos;(&quot;cat&quot; &quot;dog&quot; &quot;rabit&quot; &quot;fish&quot;)
-&apos;(:cat :dog :rabit :fish)
+&apos;(&quot;cat&quot; &quot;dog&quot; &quot;rabbit&quot; &quot;fish&quot;)
+&apos;(:cat :dog :rabbit :fish)
 &apos;(:cat 1 &quot;fish&quot; 22/7 (str &quot;fish&quot; &quot;n&quot; &quot;chips&quot;))
 </code></pre>
 <h2 id="duplicate-elements-in-a-list">Duplicate elements in a list</h2>
@@ -2247,7 +2247,7 @@
 (list :fred :barney :fred)
 </code></pre><p>If you wish to ensure only unique values then you can use a <a href="sets.html">set</a></p>
 <h2 id="changing-lists-with-the-cons-function">Changing lists with the cons function</h2>
-<p>As we have seen in the introduction to this section, changing a lists values once created is not possible.  However when a list is used as the paramter to a function call it can return a new list with different values.</p>
+<p>As we have seen in the introduction to this section, changing a lists values once created is not possible.  However when a list is used as the parameter to a function call it can return a new list with different values.</p>
 <p>The <code>cons</code> function is used to add values to the list</p>
 <pre><code>(cons 5 &apos;(1 2 3 4))
 

@@ -2252,7 +2252,7 @@
 <p>Using the <code>get</code> function we can pull out the value for a particular keyword in the map</p>
 <pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> map <span class="hljs-symbol">:keyword</span>)
 </code></pre>
-<p>You can use <code>get</code> with a nested map, however you would need a nested <code>get</code> funciton call</p>
+<p>You can use <code>get</code> with a nested map, however you would need a nested <code>get</code> function call</p>
 <pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> outer-map <span class="hljs-symbol">:outer-keyword</span>) <span class="hljs-symbol">:inner-keyword</span>)
 </code></pre>
 <p>With many nested maps, the <code>get</code> function can lead to code that is harder to read.  Using the <code>get-in</code> function provides a simpler syntax for traversing nested maps</p>
@@ -2260,9 +2260,9 @@
 </code></pre>
 <h2 id="theory-using-keywords-and-maps">Theory: Using keywords and maps</h2>
 <p>You can also use keywords to extract values from maps when using the keywords as the keys</p>
-<pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> response-map {<span class="hljs-symbol">:name</span> <span class="hljs-string">&quot;john&quot;</span> <span class="hljs-symbol">:path</span> <span class="hljs-string">&quot;/helo&quot;</span>}
+<pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> response-map {<span class="hljs-symbol">:name</span> <span class="hljs-string">&quot;john&quot;</span> <span class="hljs-symbol">:path</span> <span class="hljs-string">&quot;/hello&quot;</span>}
 </code></pre>
-<p>You can get the value from this map using the keywork</p>
+<p>You can get the value from this map using the keyword</p>
 <pre><code class="lang-clojure">(response-map :name)
 
 =&gt; &quot;john&quot;

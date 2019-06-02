@@ -2233,11 +2233,11 @@
       :droids [&quot;C3P0&quot;
                &quot;R2D2&quot;]}
     :ships {
-      :rebel-alliance  [&quot;Millenium Falcon&quot;
-                        &quot;X-wing figher&quot;]
-      :imperial-empire [&quot;Intergalactic Cruser&quot;
+      :rebel-alliance  [&quot;Millennium Falcon&quot;
+                        &quot;X-wing fifer&quot;]
+      :imperial-empire [&quot;Intergalactic Cruiser&quot;
                         &quot;Destroyer&quot;
-                        &quot;Im just making these up now&quot;]}}}
+                        &quot;I am just making these up now&quot;]}}}
 </code></pre><p>Individual starwars characters can be defined using a map of maps</p>
 <pre><code>{:luke   {:fullname &quot;Luke Skywarker&quot; :skill &quot;Targeting Swamp Rats&quot;}
   :vader  {:fullname &quot;Darth Vader&quot;    :skill &quot;Crank phone calls&quot;}
@@ -2247,7 +2247,7 @@
    {:luke   {:fullname &quot;Luke Skywarker&quot; :skill &quot;Targeting Swamp Rats&quot;}
     :vader  {:fullname &quot;Darth Vader&quot;    :skill &quot;Crank phone calls&quot;}
     :jarjar {:fullname &quot;JarJar Binks&quot;   :skill &quot;Upsetting a generation of fans&quot;}})
-</code></pre><p>Using the get function we return all the informatoin about Luke</p>
+</code></pre><p>Using the get function we return all the information about Luke</p>
 <pre><code>(get starwars-characters :luke)
 </code></pre><p>By wrapping a second <code>get</code> function around our first, we can get a specific piece of information about Luke</p>
 <pre><code>(get (get starwars-characters :luke) :fullname)
@@ -2273,7 +2273,7 @@
 (-&gt; starwars-characters
     :luke
     :skill)
-</code></pre><p>See the following <a href="https://gist.github.com/john2x/e1dca953548bfdfb9844" _target="blank">gist</a> for more examples of destructuring with Clojure</p>
+</code></pre><p>See the following <a href="https://gist.github.com/john2x/e1dca953548bfdfb9844" _target="blank">gist</a> for more examples of restructuring with Clojure</p>
 <h2 id="duplicates-in--following-maps">Duplicates in  following maps...</h2>
 <p>It is possible to have duplicate values in a map, but its not possible to have duplicate keys.  Any key must be unique within the scope of a map.</p>
 <p>The following maps will throw duplicate key errors</p>

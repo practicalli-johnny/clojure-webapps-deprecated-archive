@@ -2211,9 +2211,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="create-a-handler-function">Create a handler function</h1>
-<p>There may be a great many routes in a webapp, so to make the code more readable we create a seperate function.  In Ring terminology, this function is refered to as a handler.</p>
+<p>There may be a great many routes in a webapp, so to make the code more readable we create a separate function.  In Ring terminology, this function is refereed to as a handler.</p>
 <p>When you send a request to the webapp, the ring adaptor converts this request to a map and sends it to the specified handler.</p>
-<p><img src="../images/ring-basics-adaptor-handler-request-response.png" alt="Ring - Adaptor and Handler"></p>
+<p><img src="../images/ring-basics-adaptor-handler-request-response.png" alt="Ring - Adapter and Handler"></p>
 <p>A handler function takes the request map as its argument and returns a response map.</p>
 <div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="add-seperate-handler-function"><i class="fa fa-edit"></i> Add seperate handler function</h3></div><div class="panel-body"><p>Refactor the code in the <code>src/todo-list/core.clj</code> file to create a seperate <code>welcome</code> handler function that processes all requests</p></div></div>
 <pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> todo-list.core

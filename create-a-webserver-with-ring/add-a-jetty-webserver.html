@@ -2212,7 +2212,7 @@
                                 
                                 <h1 id="add-a-main-function-to-run-jetty">Add a main function to run Jetty</h1>
 <div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="--add-a-function-called--main-to-the--srctodolistcoreclj-file"><i class="fa fa-edit"></i>   Add a function called -main to the  src/todo_list/core.clj file.</h3></div><div class="panel-body"><p>The <code>-main</code> function takes a port number as an argument which we pass when running the application.  The Ring Jetty adaptor is used to run an instance of Jetty.  The <code>-main</code> function contains an anonymous function that takes any request and returns a <em>response map</em>.</p></div></div>
-<p><img src="../images/clojure-ring-adaptor-anonymous-function.png" alt="Ring - Adaptor and anonymous function"></p>
+<p><img src="../images/clojure-ring-adaptor-anonymous-function.png" alt="Ring - Adapter and anonymous function"></p>
 <p>A response map contains the following key / value pairs</p>
 <ul>
 <li><code>:status</code> - the result of the request, eg. 200 OK, 401 Not Found, etc</li>

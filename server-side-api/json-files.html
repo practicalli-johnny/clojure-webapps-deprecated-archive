@@ -2217,7 +2217,7 @@
 <p>We can use cheshire library to convert the JSON to a Clojure data structure.</p>
 <pre><code class="lang-clojure">(<span class="hljs-name">cheshire/parse-string</span>
   (<span class="hljs-name"><span class="hljs-builtin-name">slurp</span></span> <span class="hljs-string">&quot;spicy-vegan-pepperoni.json&quot;</span>))
-<span class="hljs-comment">;; =&gt; {&quot;name&quot; &quot;Spicy Vegan Pepperoni&quot;, &quot;size&quot; &quot;XL&quot;, &quot;origin&quot; {&quot;country&quot; &quot;PO&quot;, &quot;city&quot; &quot;Tampere&quot;}, &quot;description&quot; &quot;Healthy and delicious Vegan version of a double pepperoni pizza with some jalapenos to spice it up&quot;}</span>
+<span class="hljs-comment">;; =&gt; {&quot;name&quot; &quot;Spicy Vegan Pepperoni&quot;, &quot;size&quot; &quot;XL&quot;, &quot;origin&quot; {&quot;country&quot; &quot;PO&quot;, &quot;city&quot; &quot;Tampere&quot;}, &quot;description&quot; &quot;Healthy and delicious Vegan version of a double pepperoni pizza with some jalapeños to spice it up&quot;}</span>
 </code></pre>
 <p>Lets pretty print the Clojure data structure to make it easier to read</p>
 <pre><code class="lang-clojure">(<span class="hljs-name">clojure.pprint/pprint</span>
@@ -2230,7 +2230,7 @@
  <span class="hljs-string">&quot;size&quot;</span>   <span class="hljs-string">&quot;XL&quot;</span>,
  <span class="hljs-string">&quot;origin&quot;</span> {<span class="hljs-string">&quot;country&quot;</span> <span class="hljs-string">&quot;PO&quot;</span>, <span class="hljs-string">&quot;city&quot;</span> <span class="hljs-string">&quot;Tampere&quot;</span>},
  <span class="hljs-string">&quot;description&quot;</span>
- <span class="hljs-string">&quot;Healthy and delicious Vegan version of a double pepperoni pizza with some jalapenos to spice it up&quot;</span>}
+ <span class="hljs-string">&quot;Healthy and delicious Vegan version of a double pepperoni pizza with some jalapeños to spice it up&quot;</span>}
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 

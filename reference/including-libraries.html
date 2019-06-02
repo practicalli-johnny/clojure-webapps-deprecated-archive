@@ -2240,7 +2240,7 @@
 <p>Elaborated from <a href="http://stackoverflow.com/questions/31129544/clojure-and-leiningen-declare-and-require-namespace" _target="blank">a stack exchange answer on the use of namespaces</a> by <a href="http://stackoverflow.com/users/690139/mark-fisher" _target="blank">Mark Fisher</a></p>
 </blockquote>
 <h2 id="using-libraries">Using Libraries</h2>
-<p>The <code>use</code> function also makes another libraries namespace accessible to the current one.  However <code>use</code> includes everything from the other library, it also makes everything part of the same namespace (ie. as if the functions, macros, name bindngs, etc were written in your library).</p>
+<p>The <code>use</code> function also makes another libraries namespace accessible to the current one.  However <code>use</code> includes everything from the other library, it also makes everything part of the same namespace (ie. as if the functions, macros, name bindings, etc were written in your library).</p>
 <p>Therefore the <code>use</code> function is usually avoided and <code>require</code> is used instead.  However, it can be convenient to make use of the &apos;use&apos; function within the REPL as a way to include your project within the <code>user</code> namespace.  Being in the <code>user</code> namespace gives you access to the REPL tools (eg. <code>doc</code>, <code>source</code>, etc)</p>
 <h3 id="example">Example</h3>
 <p>Lets make use of the <code>use</code> function to include a library called <code>really-useful-code.core</code></p>

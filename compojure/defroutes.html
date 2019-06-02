@@ -2213,7 +2213,7 @@
                                 <h1 id="theory-defroutes-is-a-clojure-macro">Theory: defroutes is a Clojure macro</h1>
 <p>  The Compojure function <code>defroutes</code> is actually a Clojure macro.  The <code>defroutes</code> macro provides a simple syntax for defining routes and associating handler functions.</p>
 <h2 id="what-is-a-macro">What is a macro</h2>
-<p>Clojure has a programmatic macro system which allows the Clojure community to extend the language, rather than wait for the language designers.  This macro approach also helps keep the language very compact, with a minimum of primatives. </p>
+<p>Clojure has a programmatic macro system which allows the Clojure community to extend the language, rather than wait for the language designers.  This macro approach also helps keep the language very compact, with a minimum of primitives. </p>
 <p>We have already used several macros in our code.  In our project.clj configuration we use the <code>defproject</code> macro to make it easy to define our Clojure project.  In our code we have used the <code>defn</code> macro to define names (symbols) for functions.</p>
 <h2 id="peeking-under-the-covers">Peeking under the covers</h2>
 <p>You can always look at what a macro is doing by using the <code>macroexpand</code> or <code>macroexpand-all</code> functions.  These functions show you what the code looks like after the macro-reader has processed the macro. </p>

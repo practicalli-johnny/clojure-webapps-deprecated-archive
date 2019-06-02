@@ -2223,8 +2223,8 @@
       (<span class="hljs-name">is</span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-symbol">:result</span> body) <span class="hljs-number">3</span>)))))
 </code></pre>
 <h2 id="using-helper-functions">Using helper functions</h2>
-<p>It is good practice to create helper functions to extract out common code into its onw function.  This saves on duplication, reduces maintenance and should improve the readability of your tests.</p>
-<p>Here is an example of a helper funciton that reads data in the form of JSON and creates a Clojure map for us to work with.</p>
+<p>It is good practice to create helper functions to extract out common code into its one function.  This saves on duplication, reduces maintenance and should improve the readability of your tests.</p>
+<p>Here is an example of a helper function that reads data in the form of JSON and creates a Clojure map for us to work with.</p>
 <pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> parse-body [body]
   (<span class="hljs-name">cheshire/parse-string</span> (<span class="hljs-name"><span class="hljs-builtin-name">slurp</span></span> body) <span class="hljs-literal">true</span>))
 </code></pre>
@@ -2239,7 +2239,7 @@
 </code></pre>
 <h2 id="ringmock-library"><code>ring.mock</code> library</h2>
 <p>A library to help you mock parts of your server-side application.  This works just as well for APIs as web applications.</p>
-<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="writing-files-in-clojure-with-spit"><i class="fa fa-lightbulb-o"></i> Writing files in Clojure with spit</h3></div><div class="panel-body"><p><a href="https://clojuredocs.org/clojure.core/spit" _target="blank"><code>spit</code></a> is a simple funciton that will write files.</p></div></div>
+<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="writing-files-in-clojure-with-spit"><i class="fa fa-lightbulb-o"></i> Writing files in Clojure with spit</h3></div><div class="panel-body"><p><a href="https://clojuredocs.org/clojure.core/spit" _target="blank"><code>spit</code></a> is a simple function that will write files.</p></div></div>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>

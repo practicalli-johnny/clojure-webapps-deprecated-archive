@@ -2244,7 +2244,7 @@
         [<span class="hljs-symbol">:p</span> <span class="hljs-string">&quot;I am an awesome Clojure developer, well getting there... trying some Hiccup now&quot;</span>]))
 
 (<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> hello
-  <span class="hljs-string">&quot;A simple personalised greeting showing the use of variable parth elements&quot;</span>
+  <span class="hljs-string">&quot;A simple personalised greeting showing the use of variable path elements&quot;</span>
   [request]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [name (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> request [<span class="hljs-symbol">:route-params</span> <span class="hljs-symbol">:name</span>])]
     {<span class="hljs-symbol">:status</span> <span class="hljs-number">200</span>
@@ -2275,7 +2275,7 @@
          [<span class="hljs-symbol">:body</span>
            [<span class="hljs-symbol">:div</span> [<span class="hljs-symbol">:h1</span> {<span class="hljs-symbol">:class</span> <span class="hljs-string">&quot;info&quot;</span>} <span class="hljs-string">&quot;This is Hiccup&quot;</span>]]
            [<span class="hljs-symbol">:div</span> [<span class="hljs-symbol">:p</span> <span class="hljs-string">&quot;Take a look at the HTML generated in this page, compared to the about page&quot;</span>]]
-           [<span class="hljs-symbol">:div</span> [<span class="hljs-symbol">:p</span> <span class="hljs-string">&quot;Style-wise there is no difference between the pages as we havent added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML&quot;</span>]]]))
+           [<span class="hljs-symbol">:div</span> [<span class="hljs-symbol">:p</span> <span class="hljs-string">&quot;Style-wise there is no difference between the pages as we haven't added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML&quot;</span>]]]))
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 

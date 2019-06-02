@@ -2230,7 +2230,7 @@
 <p>  Visit <a href="http://localhost:8000/request-info" _target="blank">http://localhost:8000/request-info</a> to see the results.</p>
 <p><img src="../images/clojure-webdev-request-info-pr-str-output.png" alt="Output of the request"></p>
 <h2 id="using-compojures-request-dump-function">Using Compojure&apos;s request dump function</h2>
-<p>  Compojure has a request dump function that gives a much nicer output than our initial <code>request-info</code> function.  The <code>dump</code> funtion also seperates the default response keys with any additional keys provided by the URL.</p>
+<p>  Compojure has a request dump function that gives a much nicer output than our initial <code>request-info</code> function.  The <code>dump</code> function also separates the default response keys with any additional keys provided by the URL.</p>
 <div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="-include-handle-dump-in-the-namespace"><i class="fa fa-edit"></i>  Include handle-dump in the namespace</h3></div><div class="panel-body"></div></div>
 <pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> webdev.core
   (<span class="hljs-symbol">:require</span> [ring.adapter.jetty <span class="hljs-symbol">:as</span> jetty]

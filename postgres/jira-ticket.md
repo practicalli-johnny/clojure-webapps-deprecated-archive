@@ -77,7 +77,7 @@ Carlos Cunha added a comment - 29/Jul/12 8:36 PM
 
 Sean, thank you for such comprehensive explanation.
 
-Still, it didn't work with any of the options. I used before a postgres JDBC driver to export to the same database (in an SQL modeller - SQLEditor for the MAC) and it worked (though it would connect some times, but others not). The connection String used was like "jdbc:postgresql://host:port/database?user=xxx&password=yyy&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory". The driver name was "org.postgresql.Driver" (JDBC4). Anyway, time to give up. I will just use a local database.
+Still, it didn't work with any of the options. I used before a postgres JDBC driver to export to the same database (in an SQL modeler - SQLEditor for the MAC) and it worked (though it would connect some times, but others not). The connection String used was like "jdbc:postgresql://host:port/database?user=xxx&password=yyy&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory". The driver name was "org.postgresql.Driver" (JDBC4). Anyway, time to give up. I will just use a local database.
 
 Thank you!
 Carlos Cunha added a comment - 31/Jul/12 7:20 PM

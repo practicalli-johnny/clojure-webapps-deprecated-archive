@@ -2,7 +2,7 @@
 
 > “It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.” —Alan Perlis
 
-As functional programming becomes more popular and people search for more declarative ways of expressing programs, it is only natural to wonder how immutable values and referentially transparent functions can be used to develop interactive systems. Even a fully reified notion of time is not enough to allow for the uncertainty of the timing and value of events.
+As functional programming becomes more popular and people search for more declarative ways of expressing programs, it is only natural to wonder how immutable values and referentially transparent functions can be used to develop interactive systems. Even a fully deified notion of time is not enough to allow for the uncertainty of the timing and value of events.
 
 How does one model the value of a system at a specific time? Can such a model be manipulated formally, as in an algebra, to be reasoned about mathematically? How can continuous functions of time be combined with discreet events? And how does one reason about an uncertain future?
 

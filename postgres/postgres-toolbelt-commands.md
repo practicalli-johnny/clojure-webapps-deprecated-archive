@@ -2,7 +2,7 @@
 
 Heroku Postgres is integrated directly into the Heroku toolbelt and offers several commands that automate many common tasks associated with managing a database-backed application.
 
-> ####Hint:: Some of these commands require a postgres cleint to be installed on your computer to work.
+> ####Hint:: Some of these commands require a postgres client to be installed on your computer to work.
 
 ## pg:info
 

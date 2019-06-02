@@ -1,12 +1,12 @@
 # Clojure syntax - brackets everywhere
 
-  Clojure is percieved as having an abundance of `()`, the symbols that represent a list.  
+  Clojure is perceived as having an abundance of `()`, the symbols that represent a list.  
   
   As Clojure is a LISP (List Processing) language then everything is written in the form of a list.  This makes Clojure very powerful and also easier to read.
 
   Using a list structure also demonstrates the data-centric nature of Clojure.  Every item in the list has a value, with the first item evaluated by a function call.
 
-> **Comment** The seemingly abundance of `()` does put some people off until they realise there are fewer "special characters" in Clojure than in other C-based langauges (Java, C#, C, etc).  A good editor will also match brackets for you as you type, making it easy to write Clojure.
+> **Comment** The seemingly abundance of `()` does put some people off until they realise there are fewer "special characters" in Clojure than in other C-based languages (Java, C#, C, etc).  A good editor will also match brackets for you as you type, making it easy to write Clojure.
 
 > Syntax differences seem a very trivial reason to avoid learning Clojure.  Any Clojure or Lisp aware editor will significantly reduce your typing and errors due to missing delimiters (ie. no more errors due to missing ; in C-based languages)
 

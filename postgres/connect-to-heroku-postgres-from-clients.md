@@ -11,7 +11,7 @@ Heroku Postgres databases are accessible from anywhere via a secure http connect
 
 ## DATABASE_URL Configuration Variable
 
-When you provision an Heroku Postgres, the `DATABAE_URL` configuration variable is set for your Heroku app.  You can then use this value to connect consisently throughout the life of your database.
+When you provision an Heroku Postgres, the `DATABAE_URL` configuration variable is set for your Heroku app.  You can then use this value to connect consistently throughout the life of your database.
 
 To see the value of the `DATABSAE_URL` use the Heroku Toolbelt command `heroku config`, specifying the app name if you created multiple Heroku apps for the current project
 

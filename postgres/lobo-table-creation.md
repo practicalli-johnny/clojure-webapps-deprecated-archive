@@ -46,7 +46,7 @@ You run a REPL, load the migrations and run them (using the joyful Clojure examp
 (lobos.core/run)
 ;=> java.lang.Exception: No such global connection currently open: :default-connection, only got [] (NO_SOURCE_FILE:0)
 
-and you get an error because you didn’t open the connection yet, so, let’s do that:
+and you get an error because you did’t open the connection yet, so, let’s do that:
 1
 2
 3

@@ -1,0 +1,2425 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>get alias from database · Clojure - building a simple server side web application</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-simpletabs/tabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-wide-page/wide.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="delete-alias-from-database.html" />
+    
+    
+    <link rel="prev" href="add-alias-to-database.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://practicalli.github.io" target="_blank" class="custom-link">Practical.li</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../overview/">
+            
+                <a href="../overview/">
+            
+                    
+                    Theory: Clojure Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../overview/webapps-in-clojure.html">
+            
+                <a href="../overview/webapps-in-clojure.html">
+            
+                    
+                    Theory: WebApps in Clojure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../setup/">
+            
+                <a href="../setup/">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../create-a-project/">
+            
+                <a href="../create-a-project/">
+            
+                    
+                    Create a Project
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../create-a-project/update-project-details.html">
+            
+                <a href="../create-a-project/update-project-details.html">
+            
+                    
+                    Update Project details
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../create-a-project/code-so-far.html">
+            
+                <a href="../create-a-project/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../create-a-webserver-with-ring/">
+            
+                <a href="../create-a-webserver-with-ring/">
+            
+                    
+                    Create a webserver with Ring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../create-a-webserver-with-ring/add-ring-dependency.html">
+            
+                <a href="../create-a-webserver-with-ring/add-ring-dependency.html">
+            
+                    
+                    Add Ring Dependency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../create-a-webserver-with-ring/configure-main-namespace.html">
+            
+                <a href="../create-a-webserver-with-ring/configure-main-namespace.html">
+            
+                    
+                    Configure main namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../create-a-webserver-with-ring/namespaces.html">
+            
+                <a href="../create-a-webserver-with-ring/namespaces.html">
+            
+                    
+                    Theory: namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../create-a-webserver-with-ring/include-ring-library.html">
+            
+                <a href="../create-a-webserver-with-ring/include-ring-library.html">
+            
+                    
+                    Include Ring Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../create-a-webserver-with-ring/add-a-jetty-webserver.html">
+            
+                <a href="../create-a-webserver-with-ring/add-a-jetty-webserver.html">
+            
+                    
+                    Add a Jetty webserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../create-a-webserver-with-ring/coersing-types-and-java-lang.html">
+            
+                <a href="../create-a-webserver-with-ring/coersing-types-and-java-lang.html">
+            
+                    
+                    Theory: Coersing Types & java.lang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../create-a-webserver-with-ring/run-webserver.html">
+            
+                <a href="../create-a-webserver-with-ring/run-webserver.html">
+            
+                    
+                    Run webserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../create-a-webserver-with-ring/code-so-far.html">
+            
+                <a href="../create-a-webserver-with-ring/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../introducing-ring/">
+            
+                <a href="../introducing-ring/">
+            
+                    
+                    Theory: Introducing Ring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../create-a-handler-function/">
+            
+                <a href="../create-a-handler-function/">
+            
+                    
+                    Create a handler function
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../create-a-handler-function/add-not-found.html">
+            
+                <a href="../create-a-handler-function/add-not-found.html">
+            
+                    
+                    Add error for bad routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../create-a-handler-function/if-function.html">
+            
+                <a href="../create-a-handler-function/if-function.html">
+            
+                    
+                    Theory: if function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../create-a-handler-function/maps-and-keywords.html">
+            
+                <a href="../create-a-handler-function/maps-and-keywords.html">
+            
+                    
+                    Theory: maps and keywords
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../create-a-handler-function/code-so-far.html">
+            
+                <a href="../create-a-handler-function/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../persistent-data-structures/">
+            
+                <a href="../persistent-data-structures/">
+            
+                    
+                    Theory: Persistent Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../persistent-data-structures/lists.html">
+            
+                <a href="../persistent-data-structures/lists.html">
+            
+                    
+                    Theory: Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../persistent-data-structures/maps.html">
+            
+                <a href="../persistent-data-structures/maps.html">
+            
+                    
+                    Theory: Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../persistent-data-structures/vectors.html">
+            
+                <a href="../persistent-data-structures/vectors.html">
+            
+                    
+                    Theory: Vectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../persistent-data-structures/sets.html">
+            
+                <a href="../persistent-data-structures/sets.html">
+            
+                    
+                    Theory: Sets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../middleware-in-ring/">
+            
+                <a href="../middleware-in-ring/">
+            
+                    
+                    Middleware in Ring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../middleware-in-ring/wrap-reload.html">
+            
+                <a href="../middleware-in-ring/wrap-reload.html">
+            
+                    
+                    wrap-reload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../middleware-in-ring/test-your-code-reloads.html">
+            
+                <a href="../middleware-in-ring/test-your-code-reloads.html">
+            
+                    
+                    Test your code reloads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../middleware-in-ring/code-so-far.html">
+            
+                <a href="../middleware-in-ring/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../compojure/">
+            
+                <a href="../compojure/">
+            
+                    
+                    Compojure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../compojure/adding-dependency.html">
+            
+                <a href="../compojure/adding-dependency.html">
+            
+                    
+                    Adding dependency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../compojure/defroutes.html">
+            
+                <a href="../compojure/defroutes.html">
+            
+                    
+                    Compojure defroutes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../compojure/using-compojure.html">
+            
+                <a href="../compojure/using-compojure.html">
+            
+                    
+                    Using Compojure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../compojure/adding-goodbye-route.html">
+            
+                <a href="../compojure/adding-goodbye-route.html">
+            
+                    
+                    Adding goodbye route
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../compojure/about.html">
+            
+                <a href="../compojure/about.html">
+            
+                    
+                    About route
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../compojure/show-request-info.html">
+            
+                <a href="../compojure/show-request-info.html">
+            
+                    
+                    Show request info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../compojure/variable-path-elements.html">
+            
+                <a href="../compojure/variable-path-elements.html">
+            
+                    
+                    Variable Path Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../compojure/lisp-calculator.html">
+            
+                <a href="../compojure/lisp-calculator.html">
+            
+                    
+                    Lisp Calculator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../compojure/code-so-far.html">
+            
+                <a href="../compojure/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../heroku/">
+            
+                <a href="../heroku/">
+            
+                    
+                    Deploying to Heroku
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../heroku/update-project.html">
+            
+                <a href="../heroku/update-project.html">
+            
+                    
+                    Update the project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../heroku/procfile.html">
+            
+                <a href="../heroku/procfile.html">
+            
+                    
+                    Add Procfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../heroku/deploy.html">
+            
+                <a href="../heroku/deploy.html">
+            
+                    
+                    Deploy to Heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../heroku/code-so-far.html">
+            
+                <a href="../heroku/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../hiccup/">
+            
+                <a href="../hiccup/">
+            
+                    
+                    Hiccup HTML library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../hiccup/updating-handlers-with-hiccup.html">
+            
+                <a href="../hiccup/updating-handlers-with-hiccup.html">
+            
+                    
+                    Updating handlers with hiccup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../hiccup/create-new-handler.html">
+            
+                <a href="../hiccup/create-new-handler.html">
+            
+                    
+                    Create a new handler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../hiccup/code-so-far.html">
+            
+                <a href="../hiccup/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../refactor-namespace/">
+            
+                <a href="../refactor-namespace/">
+            
+                    
+                    Refactor namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../refactor-namespace/base-routes.html">
+            
+                <a href="../refactor-namespace/base-routes.html">
+            
+                    
+                    Base routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../refactor-namespace/play-routes.html">
+            
+                <a href="../refactor-namespace/play-routes.html">
+            
+                    
+                    Play routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../refactor-namespace/task-routes.html">
+            
+                <a href="../refactor-namespace/task-routes.html">
+            
+                    
+                    Task routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../refactor-namespace/core.html">
+            
+                <a href="../refactor-namespace/core.html">
+            
+                    
+                    Refactored Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../refactor-namespace/code-so-far.html">
+            
+                <a href="../refactor-namespace/code-so-far.html">
+            
+                    
+                    Code so far
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../postgres/">
+            
+                <a href="../postgres/">
+            
+                    
+                    Postgres Database
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../postgres/install.html">
+            
+                <a href="../postgres/install.html">
+            
+                    
+                    Postgres install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../postgres/environment-variables.html">
+            
+                <a href="../postgres/environment-variables.html">
+            
+                    
+                    Environment Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../postgres/postgres-cli.html">
+            
+                <a href="../postgres/postgres-cli.html">
+            
+                    
+                    Postgres CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../postgres/pg-admin.html">
+            
+                <a href="../postgres/pg-admin.html">
+            
+                    
+                    pgAdmin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../postgres/dataclips.html">
+            
+                <a href="../postgres/dataclips.html">
+            
+                    
+                    Dataclips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../connect-to-postgres/">
+            
+                <a href="../connect-to-postgres/">
+            
+                    
+                    Connect to Postgres
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../connect-to-postgres/add-database-dependencies.html">
+            
+                <a href="../connect-to-postgres/add-database-dependencies.html">
+            
+                    
+                    Add Database Dependencies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../connect-to-postgres/define-db-connection.html">
+            
+                <a href="../connect-to-postgres/define-db-connection.html">
+            
+                    
+                    Define Database Connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../database-model/">
+            
+                <a href="../database-model/">
+            
+                    
+                    Creating a database model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../database-model/create-table.html">
+            
+                <a href="../database-model/create-table.html">
+            
+                    
+                    Create table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../database-model/create-task.html">
+            
+                <a href="../database-model/create-task.html">
+            
+                    
+                    Create task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../database-model/show-all-task.html">
+            
+                <a href="../database-model/show-all-task.html">
+            
+                    
+                    List tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../database-model/delete-task.html">
+            
+                <a href="../database-model/delete-task.html">
+            
+                    
+                    Delete task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../database-model/alternative-approaches.html">
+            
+                <a href="../database-model/alternative-approaches.html">
+            
+                    
+                    Alternative approaches
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../task-handlers/">
+            
+                <a href="../task-handlers/">
+            
+                    
+                    Task handlers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../task-handlers/add-a-task.html">
+            
+                <a href="../task-handlers/add-a-task.html">
+            
+                    
+                    Add a task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../task-handlers/show-task.html">
+            
+                <a href="../task-handlers/show-task.html">
+            
+                    
+                    Show tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../task-handlers/delete-a-task.html">
+            
+                <a href="../task-handlers/delete-a-task.html">
+            
+                    
+                    Delete a task
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../working-example/">
+            
+                <a href="../working-example/">
+            
+                    
+                    A working example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../server-side-api/">
+            
+                <a href="../server-side-api/">
+            
+                    
+                    Server-side API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../server-side-api/compojure-api-template.html">
+            
+                <a href="../server-side-api/compojure-api-template.html">
+            
+                    
+                    Compojure-API template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../server-side-api/create-compojure-api-project.html">
+            
+                <a href="../server-side-api/create-compojure-api-project.html">
+            
+                    
+                    Create API project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../server-side-api/swagger.html">
+            
+                <a href="../server-side-api/swagger.html">
+            
+                    
+                    Swagger
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.3.1" data-path="../server-side-api/ring-swagger.html">
+            
+                <a href="../server-side-api/ring-swagger.html">
+            
+                    
+                    ring-swagger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.4" data-path="../server-side-api/plumatic-schema.html">
+            
+                <a href="../server-side-api/plumatic-schema.html">
+            
+                    
+                    Plumatic Schema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.5" data-path="../server-side-api/json-files.html">
+            
+                <a href="../server-side-api/json-files.html">
+            
+                    
+                    JSON files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.6" data-path="../server-side-api/testing-api.html">
+            
+                <a href="../server-side-api/testing-api.html">
+            
+                    
+                    Unit Testing an API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.6.1" data-path="../server-side-api/ring-mock.html">
+            
+                <a href="../server-side-api/ring-mock.html">
+            
+                    
+                    ring-mock library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.6.2" data-path="../server-side-api/cheshire.html">
+            
+                <a href="../server-side-api/cheshire.html">
+            
+                    
+                    cheshire library
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.7" data-path="../calling-apis/index.md">
+            
+                <a href="../calling-apis/index.md">
+            
+                    
+                    Calling API's
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.7.1" data-path="../calling-apis/postman.md">
+            
+                <a href="../calling-apis/postman.md">
+            
+                    
+                    Postman Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.7.2" data-path="../calling-apis/curl.md">
+            
+                <a href="../calling-apis/curl.md">
+            
+                    
+                    Curl Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.8" data-path="../server-side-api/terminology.html">
+            
+                <a href="../server-side-api/terminology.html">
+            
+                    
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.9" data-path="../server-side-api/projects/game-scoreboard/">
+            
+                <a href="../server-side-api/projects/game-scoreboard/">
+            
+                    
+                    Project: Game Scoreboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.10" data-path="../server-side-api/projects/game-scoreboard/defining-scoreboard.html">
+            
+                <a href="../server-side-api/projects/game-scoreboard/defining-scoreboard.html">
+            
+                    
+                    Defining scoreboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.11" data-path="../server-side-api/projects/game-scoreboard/defining-scores.md">
+            
+                <a href="../server-side-api/projects/game-scoreboard/defining-scores.md">
+            
+                    
+                    Defining Players
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.12" data-path="../server-side-api/projects/game-scoreboard-ui/">
+            
+                <a href="../server-side-api/projects/game-scoreboard-ui/">
+            
+                    
+                    Game Scoreboard UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../libraries/">
+            
+                <a href="../libraries/">
+            
+                    
+                    Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../work-in-progress.html">
+            
+                <a href="../work-in-progress.html">
+            
+                    
+                    Work in Progress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../using-postgres/">
+            
+                <a href="../using-postgres/">
+            
+                    
+                    Using Postgres from Clojure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Project: URL Shortner as a Service
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="create-project.html">
+            
+                <a href="create-project.html">
+            
+                    
+                    Create project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="run-project.html">
+            
+                <a href="run-project.html">
+            
+                    
+                    Run project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.3" data-path="test-app-reloading.html">
+            
+                <a href="test-app-reloading.html">
+            
+                    
+                    Test app reloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.4" data-path="compojure-template.html">
+            
+                <a href="compojure-template.html">
+            
+                    
+                    Compojure Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.5" data-path="design-data-structure.html">
+            
+                <a href="design-data-structure.html">
+            
+                    
+                    Design data structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.6" data-path="whats-in-a-request.html">
+            
+                <a href="whats-in-a-request.html">
+            
+                    
+                    Whats in a request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.7" data-path="redirect-to-full-url.html">
+            
+                <a href="redirect-to-full-url.html">
+            
+                    
+                    Redirect to full URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.8" data-path="add-static-resources.html">
+            
+                <a href="add-static-resources.html">
+            
+                    
+                    Add static resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.9" data-path="disable-anti-forgery-check.html">
+            
+                <a href="disable-anti-forgery-check.html">
+            
+                    
+                    Disable anti-forgery check
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.10" data-path="create-html-form.html">
+            
+                <a href="create-html-form.html">
+            
+                    
+                    Create HTML Form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.11" data-path="using-ring-redirect.html">
+            
+                <a href="using-ring-redirect.html">
+            
+                    
+                    Using Ring Redirect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.12" data-path="named-alias-handler.html">
+            
+                <a href="named-alias-handler.html">
+            
+                    
+                    Named alias handler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.13" data-path="if-let-function.html">
+            
+                <a href="if-let-function.html">
+            
+                    
+                    if-let function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.14" data-path="refacor-hiccup-form.html">
+            
+                <a href="refacor-hiccup-form.html">
+            
+                    
+                    Refactor: Hiccup form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.15" data-path="alias-generator.html">
+            
+                <a href="alias-generator.html">
+            
+                    
+                    Alias generator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.16" data-path="persist-aliases.html">
+            
+                <a href="persist-aliases.html">
+            
+                    
+                    Persist aliases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.17" data-path="postgres-setup.html">
+            
+                <a href="postgres-setup.html">
+            
+                    
+                    Postgres setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.18" data-path="redis-setup.html">
+            
+                <a href="redis-setup.html">
+            
+                    
+                    Redis setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.19" data-path="create-database.html">
+            
+                <a href="create-database.html">
+            
+                    
+                    create database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.20" data-path="add-alias-to-database.html">
+            
+                <a href="add-alias-to-database.html">
+            
+                    
+                    add alias to database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.23.21" data-path="get-alias-from-database.html">
+            
+                <a href="get-alias-from-database.html">
+            
+                    
+                    get alias from database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.22" data-path="delete-alias-from-database.html">
+            
+                <a href="delete-alias-from-database.html">
+            
+                    
+                    delete alias from database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../work-in-progress.html">
+            
+                <a href="../work-in-progress.html">
+            
+                    
+                    Work in Progress
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../full-app/">
+            
+                <a href="../full-app/">
+            
+                    
+                    Building a full database backed app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../libraries/index.html">
+            
+                <a href="../libraries/index.html">
+            
+                    
+                    Libraries
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.2.1" data-path="../libraries/clojars.html">
+            
+                <a href="../libraries/clojars.html">
+            
+                    
+                    Clojars
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2.2" data-path="../libraries/om.html">
+            
+                <a href="../libraries/om.html">
+            
+                    
+                    om
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2.3" data-path="../libraries/edn.html">
+            
+                <a href="../libraries/edn.html">
+            
+                    
+                    edn
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.3" data-path="../testing/">
+            
+                <a href="../testing/">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.3.1" data-path="../testing/">
+            
+                <a href="../testing/">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4" data-path="../reference/">
+            
+                <a href="../reference/">
+            
+                    
+                    Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.4.1" data-path="../reference/basic-syntax.html">
+            
+                <a href="../reference/basic-syntax.html">
+            
+                    
+                    Basic Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.2" data-path="../reference/strings.html">
+            
+                <a href="../reference/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.3" data-path="../reference/maths.html">
+            
+                <a href="../reference/maths.html">
+            
+                    
+                    Maths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.4" data-path="../reference/data-structures.html">
+            
+                <a href="../reference/data-structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.5" data-path="../reference/functions.html">
+            
+                <a href="../reference/functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.6" data-path="../reference/control-flow.html">
+            
+                <a href="../reference/control-flow.html">
+            
+                    
+                    Control flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.7" data-path="../reference/local-assignement.html">
+            
+                <a href="../reference/local-assignement.html">
+            
+                    
+                    Local Assignment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.8" data-path="../reference/including-libraries.html">
+            
+                <a href="../reference/including-libraries.html">
+            
+                    
+                    Including Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5" data-path="../lighttable/">
+            
+                <a href="../lighttable/">
+            
+                    
+                    Lighttable
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.5.1" data-path="../lighttable/configure-keyboard-mappings.html">
+            
+                <a href="../lighttable/configure-keyboard-mappings.html">
+            
+                    
+                    Configure Keyboard mappings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6" data-path="../leiningen/">
+            
+                <a href="../leiningen/">
+            
+                    
+                    Projects with Leiningen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.6.1" data-path="../leiningen/create-a-project.html">
+            
+                <a href="../leiningen/create-a-project.html">
+            
+                    
+                    Create a project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6.2" data-path="../leiningen/run-the-repl.html">
+            
+                <a href="../leiningen/run-the-repl.html">
+            
+                    
+                    Run the REPL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6.3" data-path="../leiningen/profile.html">
+            
+                <a href="../leiningen/profile.html">
+            
+                    
+                    Profiles overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6.4" data-path="../leiningen/adding-a-dev-profile.html">
+            
+                <a href="../leiningen/adding-a-dev-profile.html">
+            
+                    
+                    Adding a dev profile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6.5" data-path="../leiningen/templates.html">
+            
+                <a href="../leiningen/templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6.6" data-path="../leiningen/plugins.html">
+            
+                <a href="../leiningen/plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.7" data-path="../development-environment/">
+            
+                <a href="../development-environment/">
+            
+                    
+                    Development Environments
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.7.1" data-path="../development-environment/java.html">
+            
+                <a href="../development-environment/java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.7.2" data-path="../development-environment/leiningen.html">
+            
+                <a href="../development-environment/leiningen.html">
+            
+                    
+                    Leiningen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.7.3" data-path="../development-environment/lighttable.html">
+            
+                <a href="../development-environment/lighttable.html">
+            
+                    
+                    LightTable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.7.4" data-path="../development-environment/other-tools.html">
+            
+                <a href="../development-environment/other-tools.html">
+            
+                    
+                    Other tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >get alias from database</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="get-alias-from-database">get alias from database</h1>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="add-alias-to-database.html" class="navigation navigation-prev " aria-label="Previous page: add alias to database">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="delete-alias-from-database.html" class="navigation navigation-next " aria-label="Next page: delete alias from database">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"get alias from database","level":"1.23.21","depth":2,"next":{"title":"delete alias from database","level":"1.23.22","depth":2,"path":"project-url-shortner/delete-alias-from-database.md","ref":"project-url-shortner/delete-alias-from-database.md","articles":[]},"previous":{"title":"add alias to database","level":"1.23.20","depth":2,"path":"project-url-shortner/add-alias-to-database.md","ref":"project-url-shortner/add-alias-to-database.md","articles":[]},"dir":"ltr"},"config":{"plugins":["callouts","codeblock-disable-glossary","disqus","ga","gist","klipse","sectionx","simpletabs","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"disqus":{"shortName":"clojure-webapps-practicalli","useIdentifier":false},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"gist":{},"youtube":{},"search":{},"wide-page":{},"lunr":{"maxIndexSize":1000000},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"ga":{"token":"UA-28030709-8","configuration":"auto"},"klipse":{"myConfigKey":"it's the default value"},"toolbar":{"buttons":[{"label":"Gitter Chat","icon":"fa fa-comments-o","url":"https://gitter.im/practicalli/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli"},{"label":"Search page title on StackOverflow","icon":"fa fa-stack-overflow","url":"http://stackoverflow.com/search?q={{title}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"host":"practical.li"},"title":"Clojure - building a simple server side web application","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.0.0","description":"Server-side applications and APIs in Clojure"},"file":{"path":"project-url-shortner/get-alias-from-database.md","mtime":"2016-07-15T10:32:51.942Z","type":"markdown"},"gitbook":{"version":"3.0.3","time":"2019-08-19T13:04:43.202Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-gist/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-simpletabs/tabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

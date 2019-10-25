@@ -2303,23 +2303,23 @@
 <p>  The <code>require</code> function will provide access functions and names from specific namespaces and an alias for the namespace can also be specified with the <code>:as</code> directive.</p>
 <p>  A function from that namespace can then be used by prefixing its name with the alias specified in the <code>require</code> expression.</p>
 <p>  Here is an example of including the <code>clojure.string</code> namespace and calling its <code>reverse</code> fuction</p>
-<pre><code>(require &apos;[clojure.string :as string])
+<pre><code>(require [clojure.string :as string])
 
 (string/reverse &quot;RedRum&quot;)
 </code></pre><h2 id="including-another-namespace-in-source-code">Including another namespace in source code</h2>
 <p>  Instead of the <code>require</code> function, add the <code>:require</code> keyword in the namespace definition, <code>ns</code>.</p>
 <pre><code>(ns todo-list.core
- (:require &apos;[clojure.string :as string))
+ (:require [clojure.string :as string))
 
 (string/reverse &quot;RedRum&quot;)
 </code></pre><p>  If a funciton will be used many times in the namespace, you can <code>:refer</code> a function so you can call it just by name, as if it had been defined in the current namespace.</p>
 <pre><code>(ns todo-list.core
- (:require &apos;[clojure.string :refer [reverse]))
+ (:require [clojure.string :refer [reverse]))
 
 (reverse &quot;RedRum&quot;)
 </code></pre><p>  If you are using most functions from another namespace, you could <code>:refer :all</code>.  However, use this sparingly as it could lead to functions over-riding each other.</p>
 <pre><code>(ns todo-list.core
- (:require &apos;[clojure.string :refer :all))
+ (:require [clojure.string :refer :all))
 </code></pre><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="-you-may-see-use-or-use-in-earlier-clojure-code--although-this-still-works-it-includes-everything-from-the-other-namespace-into-your-current-one--this-is-seen-as-a-bad-practice-especially-when-writing-libraries-as-you-can-end-up-including-a-great-many-unused-functions-into-the-namespace"><i class="fa fa-lightbulb-o"></i>  You may see use or :use in earlier Clojure code.  Although this still works, it includes everything from the other namespace into your current one.  This is seen as a bad practice, especially when writing libraries, as you can end up including a great many unused functions into the namespace.</h3></div><div class="panel-body"><p>As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.  This also helps reduce conflicts when including multiple libraries in your project.</p></div></div>
 <h2 id="namespaces-outside-the-project">Namespaces outside the project</h2>
 <p>  To use a namespace from a library that is not part of the project, you also need to include it as a dependency.  We saw in <a href="add-ring-dependency.html">add ring dependency</a> how to add a library as a <code>:dependency</code> in the Leiningen <code>project.clj</code> file.</p>
